@@ -1,0 +1,95 @@
+@font-face {
+    font-family: spaceAge;
+    src: url('../../assets/fonts/spaceage.ttf');
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+}
+
+.section {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 5%;
+    gap: 10%;
+    align-items: center;
+}
+
+#homeA {
+    text-align: center;
+    justify-content: content;
+    width: 40%;
+}
+
+#homeB {
+    text-align: center;
+    width: 45%;
+}
+
+#homeA1,
+#homeA2 {
+    color: aliceblue;
+    font-size: xx-large;
+}
+
+#homeA2 {
+    font-family: spaceAge;
+    font-size: 50px;
+}
+
+#homeB1B {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 5%;
+    padding-bottom: 0;
+}
+
+#aboutA {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+#aboutA1 {
+    width: 100%;
+    text-align: center;
+}
+
+#PortfolioACarousel {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 5%;
+}
+
+#portfolioA {
+    width: 90%;
+    height: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#portfolioA1Card {
+    height: 100%;
+}
+
+#contactA {
+    padding: 10%;
+}
+
+:host ::ng-deep {
+    .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+        background: #B0BEC5;
+    }
+    .p-carousel .p-carousel-content .p-carousel-prev,
+    .p-carousel .p-carousel-content .p-carousel-next {
+        color: aliceblue;
+    }
+}

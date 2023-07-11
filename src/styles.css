@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/luna-green/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+body {
+    font-family: var(--font-family);
+    background-image: url('assets/images/img_earth.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    background-position: center;
+}
+html{
+    scroll-behavior: smooth;
+}
+
