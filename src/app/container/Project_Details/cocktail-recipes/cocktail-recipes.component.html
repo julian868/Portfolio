@@ -1,0 +1,56 @@
+<div class="mainContainer">
+    <div class="searchAreaContainer">
+        <div id="searchInput">
+            <div>
+                <span class="p-input-icon-left">
+                    <span class="p-float-label">
+                        <input (keyup.enter)="searchCocktails()" id="searchInput"
+                            [ngClass]="invalidSearch ? 'ng-invalid ng-dirty':'' " type="text" pInputText
+                            [(ngModel)]="searchInput" />
+                        <label *ngIf="!invalidSearch" [htmlFor]="searchInput"><i class="pi pi-search"></i> Search
+                            Cocktails</label>
+                        <label *ngIf="invalidSearch" [htmlFor]="searchInput"><i class="pi pi-exclamation-circle"></i>
+                            Invalid
+                            Search</label>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <p-button styleClass="p-button-rounded" (onClick)="searchCocktails()">Search</p-button>
+            </div>
+        </div>
+        <div id="closeResultsButton" *ngIf="showSearchResults">
+            <p-button icon="pi pi-times" styleClass="p-button-rounded p-button-secondary"
+                (onClick)="closeResults()"></p-button>
+        </div>
+    </div>
+    <div class="carouselContainer" *ngIf="showSearchResults">
+        <p-carousel [value]="searchResults.drinks" [numVisible]="3" [numScroll]="3" [circular]="false">
+            <ng-template let-cocktail pTemplate="item">
+                <div>
+                <img src="{{cocktail.strDrinkThumb}}" width="auto" height="auto" style="max-width: 60%; max-height: 15vw;">
+                <br>
+                <h4 id="cocktailHeader">{{cocktail.strDrink}}</h4>
+                <p-button id="viewRecipeButton" (onClick)="viewRecipe({cocktail})">View Recipe</p-button>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+    <div class="recipeContainer" *ngIf="showRecipe">
+        <div id="ingredients">
+            <h4>Ingredients</h4>
+            <table *ngFor="let ingredient of ingredients">
+                <tr>
+                    <td>{{measurements.get(ingredient)}}</td>
+                    <td>{{ingredient}}</td>
+                    <td><img [src]="ingredientImages.get(ingredient)"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="instructions">
+            <h4>Instructions</h4>
+            {{instructions}}
+        </div>
+    </div>
+
+</div>

@@ -12,12 +12,19 @@ import { CarouselModule } from 'primeng/carousel';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ImageModule } from 'primeng/image';
+import { CocktailRecipesComponent } from './container/Project_Details/cocktail-recipes/cocktail-recipes.component';
+import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { HttpClientModule } from '@angular/common/http';
+import { ShowSearchResultsDirective } from './customDirectives/show-search-results.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
-    ContainerComponent
+    ContainerComponent,
+    CocktailRecipesComponent,
+    ShowSearchResultsDirective
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,10 @@ import { ImageModule } from 'primeng/image';
     CarouselModule,
     DynamicDialogModule,
     BrowserAnimationsModule,
-    ImageModule
+    ImageModule,
+    FormsModule,
+    InputTextModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

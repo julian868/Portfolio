@@ -108,7 +108,7 @@ import { FormsModule } from '@angular/forms';
         #colorPickerContainer{
             display:flex; 
             gap:5px; 
-            align-Items:center;
+            align-items:center;
         }
         ul{
             list-style :none; 
@@ -143,7 +143,7 @@ export class QrGeneratorDetails {
             height: 300,
             type: 'svg',
             data: this.data,
-            image: '/assets/images/portfolioIcon.png',
+            image: 'assets/images/portfolioIcon.png',
             margin: 10,
             qrOptions: {
                 typeNumber: 0,

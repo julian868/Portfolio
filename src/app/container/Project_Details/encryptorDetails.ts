@@ -9,7 +9,7 @@ import { ImageModule } from "primeng/image";
     imports:[ImageModule],
     template: `
         <p>
-            <p-image src="../../../assets/images/encryptor_1.jpg" width="250" [preview]="true"></p-image>
+            <p-image src="assets/images/encryptor_1.jpg" width="250" [preview]="true"></p-image>
             This JAVA console application encrypts text inputted by the user and returns cypher text using the AES 
             algorithm. Upon startup the user selects either encryption or decryption mode. In encryption mode 
             the user enters the text to be decoded, followed by a secret key which is used to encrypt the text. 

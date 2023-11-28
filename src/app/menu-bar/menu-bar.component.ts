@@ -18,20 +18,20 @@ export class MenuBarComponent {
   items: MenuItem[] = [
     {
       label: 'Home',
-      command: (event) => {
+      command: () => {
         this.onMenuBarItemClicked('home');
         
       }
     },
     {
       label: 'About',
-      command: (event) => {
+      command: () => {
         this.onMenuBarItemClicked('about');
       }
     },
     {
       label: 'Portfolio',
-      command: (event) => {
+      command: () => {
         this.onMenuBarItemClicked('portfolio');
       }
     }
