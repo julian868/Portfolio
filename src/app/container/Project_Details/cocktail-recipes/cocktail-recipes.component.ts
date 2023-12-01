@@ -24,7 +24,7 @@ export class CocktailRecipesComponent {
 
   constructor(private http: HttpClient) { }
 
-  searchCocktails() {
+  async searchCocktails() {
     if (this.searchInput != "") {
       this.http.get<any>(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.searchInput}`)
         .subscribe((res) => {
@@ -68,11 +68,6 @@ export class CocktailRecipesComponent {
         )
         .subscribe(base64ImageUrl => this.ingredientImages.set(cocktail.cocktail[ingredientKey], base64ImageUrl))
     }
-    console.log(this.ingredientImages)
-    console.log(this.measurements);
-    console.log(this.ingredients);
-
-
   }
   closeResults() {
     this.showSearchResults = false;
@@ -88,7 +83,6 @@ export class CocktailRecipesComponent {
       const reader = new FileReader();
       const binaryString = reader.readAsDataURL(blob);
       reader.onload = (event: any) => {
-        console.log('Image in Base64: ', event.target.result);
         observer.next(event.target.result);
         observer.complete();
       };

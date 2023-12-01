@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { EncryptorDetails } from './Project_Details/encryptorDetails';
 import { QrGeneratorDetails } from './Project_Details/QrGeneratorDetails';
-import { EncryptorDemoComponent } from './Project_Details/encryptor-demo/encryptor-demo.component';
+import { EncryptorComponent } from './Project_Details/encryptor/encryptor.component';
 import { CocktailRecipesComponent } from './Project_Details/cocktail-recipes/cocktail-recipes.component';
 
 @Component({
@@ -41,7 +40,7 @@ export class ContainerComponent {
         break;
       case 102:
         {
-          this.ref = this.dialogService.open(QrGeneratorDetails, {
+          this.ref = this.dialogService.open(EncryptorComponent, {
             header: project.name,
             width: '65%',
             height: '80%'
@@ -50,18 +49,10 @@ export class ContainerComponent {
         break;
       case 103:
         {
-          this.ref = this.dialogService.open(EncryptorDetails, {
+          this.ref = this.dialogService.open(QrGeneratorDetails, {
             header: project.name,
             width: '65%',
             height: '80%'
-          })
-        }
-        break
-      case 104:
-        {
-          this.ref = this.dialogService.open(EncryptorDemoComponent, {
-            header: project.name,
-            width: '65%'
           })
         }
         break;
@@ -78,12 +69,12 @@ export class ContainerComponent {
       id: 101, name: 'Cocktail Recipe Finder', description: 'Search and retreive popular cocktail recipes',
       image: 'cocktail.jpg'
     },
-    { id: 102, name: 'QR Code Generator', description: 'Generates QR Code based on text input.',
-      image: 'qrcode_cover.jpg'
-    },
     {
-      id: 103, name: 'Encryptor', description: 'Encrypts text and decrypts ciphertext using AES protocol.',
+      id: 102, name: 'Encryptor', description: 'Encrypts text and decrypts ciphertext using AES protocol.',
       image: 'encryptor_cover.jpg'
-    }
+    },
+    { id: 103, name: 'QR Code Generator', description: 'Generates QR Code based on text input.',
+      image: 'qrcode_cover.jpg'
+    }    
   ];
 }

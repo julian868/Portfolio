@@ -1,0 +1,110 @@
+<p-tabView>
+    <p-tabPanel header="Encryptor 2">
+        <div id="encryptor2">
+            <div class="textButton" id="encTextButton">
+                <span class="p-input-icon-left">
+                    <span class="p-float-label">
+                        <textarea rows="5" cols="30" id="inputPlainText" type="text" pInputText
+                            [(ngModel)]="inputPlainText"></textarea>
+                        <label [htmlFor]="inputPlainText"><i class="pi pi-lock"></i>
+                            Enter Plaintext</label>
+                    </span>
+                </span>
+                <p-button class="p-button-rounded" (onClick)="encrypt()">Encrypt</p-button>
+            </div>
+            <div class="textButton" id="decTextButton">
+                <span class="p-input-icon-left">
+                    <span class="p-float-label">
+                        <textarea rows="5" cols="30" id="inputCipherText" type="text" pInputText
+                            [(ngModel)]="inputCipherText"></textarea>
+                        <label [htmlFor]="inputCipherText"><i class="pi pi-lock-open"></i>
+                            Enter Ciphertext</label>
+                    </span>
+                </span>
+                <p-button class="p-button-rounded" (onClick)="decrypt()">Decrypt</p-button>
+            </div>
+        </div>
+        <div id="aboutProject" *ngIf="(output=='')">
+            <h4>About the Project</h4>
+            <h5>Background:</h5>
+            <p>After building my first encryptor application in Java, I wanted to deploy it to my portfolio. Even though it would be
+            technically possible to deploy this application using the Angular framework that this site is built on, I knew that this
+            would not be a security best practice for an encryption application. I therefore decided to host the application on a
+            backend NodeJS server in order to protect the logic from being accessed by the user.</p>
+            <h5>Operation:</h5>
+            <p>To encrypt text, enter the text into the “Enter Plaintext” textfield and click on the “Encrypt Button”. The encrypted cipher
+            text will appear in an output field that replaces the project information.</p>
+            <p>To decrypt cipher text, enter the cipher text into the “Enter Ciphertext” text field and click on the “Decrypt Button”.
+            If the ciphertext is valid, the decrypted plain text will appear in an output field that replaces the project
+            information. If the cipher text is invalid or an error occurs, an error message will appear instead of the decrypted
+            plain text.</p>
+            <h5>Technical Details:</h5>
+            <p>The encryption and decryption processes both work by sending GET http requests to a custom-built API that performs the
+            respective operations and returns the results or error messages. I built the API using NodeJS with Express and hosted it
+            on a Vercel stateless server. Special care was taken to ensure the NodeJS server is reusable and scalable including
+            building it in an MVC architecture and following best practices in directory architecture.</p>
+            <label>
+                <h4>Skills</h4>
+            </label>
+            <ul>
+                <li>REST API</li>
+                <li>NodeJS</li>
+                <li>Express</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>Angular</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>NPM Libraries</li>
+            </ul>
+            <br><br>
+        </div>
+        <div id="output" *ngIf="(output!='')">
+            <p-fieldset legend="Output">
+                <div id="fieldsetContent">
+                    <div id="outputContent">
+                        <h5>{{outputTextHeader}}</h5>
+                        <p>{{output}}</p>
+                    </div>
+                    <div id="closeOutput"><p-button icon="pi pi-times"
+                            styleClass="p-button-rounded p-button-secondary" (onClick)="closeOutput()"></p-button>
+                    </div>
+                </div>
+            </p-fieldset>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel header="Encryptor 1">
+        <div id="encryptor1">
+            <p>
+                <p-image src="assets/images/encryptor_1.jpg" width="250" [preview]="true"></p-image>
+                This JAVA console application encrypts text inputted by the user and returns cypher text using the AES
+                algorithm. Upon startup the user selects either encryption or decryption mode. In encryption mode
+                the user enters the text to be decoded, followed by a secret key which is used to encrypt the text.
+                The ciphertext is then produced and displayed in the console. The Initialization Vector, IV, is appended
+                to the ciphertext returned. It is not necessary to keep the IV secret.
+                <br><br>
+                In decryption mode, the user enters the ciphertext which includes the appended IV along with the secret
+                key.
+                The IV is first unappended from the ciphertext. The decryption key is then generated using the value
+                entered for
+                the secret key. The ciphertext is then decrypted using the generated key and the IV. The original
+                plaintext is
+                then
+                returned. Manipulation of the IV is handled automatically from the backend and requires no additional
+                operations
+                by the user.
+            </p>
+            <label>
+                <h4>Skills</h4>
+            </label>
+            <ul>
+                <li>JAVA</li>
+                <li>AES Encryption</li>
+                <li>Bit Manipulation</li>
+            </ul>
+            <br><br>
+            <span class="sourceCode">View Source Code: <a href="https://github.com/julian868/Encryptor"
+                    target="_blank">https://github.com/julian868/Encryptor</a></span>
+        </div>
+    </p-tabPanel>
+</p-tabView>
