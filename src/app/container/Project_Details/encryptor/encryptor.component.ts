@@ -28,7 +28,6 @@ export class EncryptorComponent {
     if (this.inputPlainText != "") {
       this.http.get<any>(`https://vercel-test-ashen-phi.vercel.app/encryption/encrypt/${this.inputPlainText}`)
         .subscribe((res) => {
-          console.log(res);
           this.output = res.cipherText;
           this.outputTextHeader = 'Encrypted Cyphertext:';
         })
