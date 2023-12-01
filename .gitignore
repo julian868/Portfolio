@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Encryptor Demo
+src\app\container\Project_Details\encryptor-demo

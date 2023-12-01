@@ -1,0 +1,106 @@
+<div class="mainContainer">
+    <div class="searchAreaContainer">
+        <div id="searchInput">
+            <div>
+                <span class="p-input-icon-left">
+                    <span class="p-float-label">
+                        <input (keyup.enter)="searchCocktails()" id="searchInput"
+                            [ngClass]="invalidSearch ? 'ng-invalid ng-dirty':'' " type="text" pInputText
+                            [(ngModel)]="searchInput" />
+                        <label *ngIf="!invalidSearch" [htmlFor]="searchInput"><i class="pi pi-search"></i> Search
+                            Cocktails</label>
+                        <label *ngIf="invalidSearch" [htmlFor]="searchInput"><i class="pi pi-exclamation-circle"></i>
+                            Invalid
+                            Search</label>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <p-button styleClass="p-button-rounded" (onClick)="searchCocktails()">Search</p-button>
+            </div>
+        </div>
+        <div id="closeResultsButton" *ngIf="showSearchResults">
+            <p-button icon="pi pi-times" styleClass="p-button-rounded p-button-secondary"
+                (onClick)="closeResults()"></p-button>
+        </div>
+    </div>
+    <div class="aboutProject" *ngIf="!showSearchResults">
+        <h4>About the Project</h4>
+        <h5>Background:</h5>
+        <p>Having worked as a bartender for several years, I often find myself needing to lookup cocktail recipes on
+            short notice.
+            I therefore decided to build this app to have a quick and standardized way to lookup cocktail recipes
+            without the hassle
+            and clutter of the websites that are already available. As a point of personal pride, this application has
+            gained quite an interest
+            amongst my friends and family who find it useful themselves.</p>
+        <h5>Operation:</h5>
+        <p>To use the application, enter the name of a cocktail in the “Search Cocktails” text field above. Click the
+            search button or
+            press Enter to search for your entry. If there is a match, the name, the image and a view recipe button will
+            appear. The
+            first three matches will appear, and subsequent matches can be viewed by navigating the carousel with the
+            arrows to the
+            side of the results or with the navigation bars below. To view a recipe, click the “View Recipe” button. The
+            ingredients
+            and instructions will then appear. The ingredients list contains the name of the ingredient, the measurement
+            and an
+            image of each ingredient. To close the results and return to the starting page, click the "X" button that
+            appears in the top right corner of the screen when search results are displayed.</p>
+        <h5>Technical Details:</h5>
+        <p>The application operates by sending GET http requests to <a href="https://www.thecocktaildb.com/api.php">The
+                Cocktail DB API</a>. The requests returns the data in JSON
+            objects containing the details of each recipe. Image requests are returned as blob responses and are
+            converted to base64
+            images for display in the template. The application is presented in Angular with the PrimeNG UI library, as
+            is the rest
+            of this portfolio website where this application is contained.</p>
+        <label>
+            <h4>Skills</h4>
+        </label>
+        <ul>
+            <li>REST API</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>Angular</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>NPM Libraries</li>
+        </ul>
+        <br><br>
+        <span class="sourceCode">View Source Code: <a
+                href="https://github.com/julian868/JulianEllisPortfolio/tree/cocktail-recipe-finder/src/app/container/Project_Details/cocktail-recipes"
+                target="_blank">https://github.com/julian868/JulianEllisPortfolio/tree/cocktail-recipe-finder/src/app/container/Project_Details/cocktail-recipes</a>
+        </span>
+    </div>
+    <div class="carouselContainer" *ngIf="showSearchResults">
+        <p-carousel [value]="searchResults.drinks" [numVisible]="3" [numScroll]="3" [circular]="false">
+            <ng-template let-cocktail pTemplate="item">
+                <div>
+                    <img src="{{cocktail.strDrinkThumb}}" width="auto" height="auto"
+                        style="max-width: 60%; max-height: 15vw;">
+                    <br>
+                    <h4 id="cocktailHeader">{{cocktail.strDrink}}</h4>
+                    <p-button id="viewRecipeButton" (onClick)="viewRecipe({cocktail})">View Recipe</p-button>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+    <div class="recipeContainer" *ngIf="showRecipe">
+        <div id="ingredients">
+            <h4>Ingredients</h4>
+            <table *ngFor="let ingredient of ingredients">
+                <tr>
+                    <td>{{measurements.get(ingredient)}}</td>
+                    <td>{{ingredient}}</td>
+                    <td><img [src]="ingredientImages.get(ingredient)"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="instructions">
+            <h4>Instructions</h4>
+            {{instructions}}
+        </div>
+    </div>
+
+</div>

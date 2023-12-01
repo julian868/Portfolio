@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { EncryptorDetails } from './Project_Details/encryptorDetails';
 import { QrGeneratorDetails } from './Project_Details/QrGeneratorDetails';
+import { EncryptorComponent } from './Project_Details/encryptor/encryptor.component';
+import { CocktailRecipesComponent } from './Project_Details/cocktail-recipes/cocktail-recipes.component';
 
 @Component({
   selector: 'app-container',
@@ -29,14 +30,24 @@ export class ContainerComponent {
     switch (project.id) {
       case 101:
         {
-          this.ref = this.dialogService.open(EncryptorDetails, {
+          this.ref = this.dialogService.open(CocktailRecipesComponent, {
             header: project.name,
             width: '65%',
+            height: '80%',
             dismissableMask: true,                        
           })
         }
         break;
       case 102:
+        {
+          this.ref = this.dialogService.open(EncryptorComponent, {
+            header: project.name,
+            width: '65%',
+            height: '80%'
+          })
+        }
+        break;
+      case 103:
         {
           this.ref = this.dialogService.open(QrGeneratorDetails, {
             header: project.name,
@@ -54,11 +65,16 @@ export class ContainerComponent {
     }
   }
   projects = [
-    { id: 101, name: 'Encryptor', description: 'Encrypts text and decrypts ciphertext using AES protocol.',
+    { 
+      id: 101, name: 'Cocktail Recipe Finder', description: 'Search and retreive popular cocktail recipes',
+      image: 'cocktail.jpg'
+    },
+    {
+      id: 102, name: 'Encryptor', description: 'Encrypts text and decrypts ciphertext using AES protocol.',
       image: 'encryptor_cover.jpg'
     },
-    { id: 102, name: 'QR Code Generator', description: 'Generates QR Code based on text input.',
+    { id: 103, name: 'QR Code Generator', description: 'Generates QR Code based on text input.',
       image: 'qrcode_cover.jpg'
-    }
+    }    
   ];
 }

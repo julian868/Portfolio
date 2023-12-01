@@ -1,0 +1,76 @@
+a:visited {
+    color: #dedede
+}
+
+.sourceCode {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    font-size: smaller;
+    gap: 5px
+}
+
+p-image {
+    float: left;
+    padding-right: 15px
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    margin: 0px;
+}
+
+h4 {
+    text-align: center;
+    margin: 0px;
+    margin-top: 5px
+}
+
+textarea {
+    resize: none;
+}
+
+#encryptor2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.textButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#decTextButton {
+    margin-left: auto;
+}
+
+#fieldsetContent {
+    display: flex;
+}
+
+#closeOutput {
+    margin-left: auto;
+    margin-right: -2%;
+    margin-top: -3.5%;
+}
+#output{
+    padding-top: 3%;
+}
+#encryptor2{
+    padding-top: 3%;
+}
+.textButton>p-button{
+    padding-top: 2%;
+}
+#aboutProject{
+    padding-top: 1%;
+}
+:host ::ng-deep .p-tabview-panels{
+    border: 0px;
+}
