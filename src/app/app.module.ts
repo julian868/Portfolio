@@ -22,6 +22,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FieldsetModule } from 'primeng/fieldset';
+import { SkillIconComponent } from './container/skill-icon/skill-icon.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,8 @@ import { FieldsetModule } from 'primeng/fieldset';
     ContainerComponent,
     CocktailRecipesComponent,
     ShowSearchResultsDirective,
-    EncryptorComponent
+    EncryptorComponent,
+    SkillIconComponent
   ],
   imports: [
     BrowserModule,

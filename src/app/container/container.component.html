@@ -2,59 +2,139 @@
     <app-menu-bar (menuBarItemClicked)="scrollToById($event)"></app-menu-bar>
 </div>
 <div class="section" id="home" #home>
-    <div id="homeA">
-        <span id="homeA1">Hello there! I'm</span><br><span id="homeA2">Julian Ellis</span>
-    </div>
-    <div id="homeB">
-        <p-card header="Welcome to my portfolio" id="homeB1">
-            <p class="card" id="homeB1A">
-                I created this site to showcase some of my capabilities in software development.
-                The site itself is a portfolio entry as I built it using Angular 16 and the PrimeNG Library.<br>
-                I hope you enjoy!
-            </p>
-            <div id="homeB1B">
-                <p-button label="Learn More About Me" styleClass="p-button-rounded p-button-secondary"
-                    (onClick)="scrollTo(about)"></p-button>
-                <p-button label="View My Portfolio" styleClass="p-button-rounded p-button-secondary"
-                    (onClick)="scrollTo(portfolio)"></p-button>
-            </div>
-        </p-card>
-    </div>
-</div>
-<div class="section" id="about" #about>
-    <div id="aboutA">
-        <p-card [header]="'Where I am Today'" id="aboutA1">
-            <p>
-                After completing a double major in Economics and Environmental Science at the University of Toronto in
-                late 2019, personal challenges coupled with the
-                Covid-19 pandemic returned me to school to pursue a Computer Programming Diploma at Sheridan College.
-                This decision birthed a true
-                passion for software development, one which I wish I had discovered much earlier. My strong aptitude and
-                abilities in math and
-                science have truly complemented my skill, interest and desire to grow in the IT field.<br>
-                Now that I have graduated my goal is to continue to grow and develop in a professional setting. It is a
-                priority
-                that I find myself in environments where I can foster this growth by learning from others, making
-                positive contributions
-                and hopefully to one day inspire others on a similar path.
-            </p>
-        </p-card>
+    <div class="sectionBackgroud">
+        <div id="homeA">
+            <span id="homeA1">Hello there! I'm</span><br><span id="homeA2">Julian Ellis</span>
+        </div>
+        <div id="homeB">
+            <p-card header="Welcome to my portfolio" id="homeB1">
+                <p class="card" id="homeB1A">
+                    I created this site to showcase some of my capabilities in software development.
+                    The site itself is a portfolio entry as I built it using Angular 16 and the PrimeNG Library.<br>
+                    I hope you enjoy!
+                </p>
+                <div id="homeB1B">
+                    <p-button label="Learn More About Me" styleClass="p-button-rounded p-button-secondary"
+                        (onClick)="scrollTo(about)"></p-button>
+                    <p-button label="View My Portfolio" styleClass="p-button-rounded p-button-secondary"
+                        (onClick)="scrollTo(portfolio)"></p-button>
+                </div>
+            </p-card>
+        </div>
     </div>
 </div>
-<div class="section" id="portfolio" #portfolio>
-    <div id="portfolioA">
-        <p-carousel id="PortfolioACarousel" [numVisible]="1" [value]="projects">
-            <ng-template pTemplate="header">
-                <h3 style="color: aliceblue;">Featured Projects:</h3>
-            </ng-template>
-            <ng-template let-project pTemplate="item">
-                <p-card [header]="project.name" id="PortfolioA1Card">
-                    <img src="assets/images/{{project.image}}" width="45%">
-                    <p>{{project.description}}</p>
-                    <p-button (onClick)="showDetails(project)" styleClass="p-button-rounded p-button-secondary">View
-                        Details</p-button>
-                </p-card>
-            </ng-template>
-        </p-carousel>
+<div class="sectionBackgroud">
+    <div class="section" id="about" #about>
+        <div class="aboutItem" id="aboutA">
+            <p-card [header]="'Skills'">
+                <h4>Programming Languages: </h4>
+                <p>
+                    <app-skill-icon [iconName]="'java'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'javascript'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'typescript'" [isColored]="true"></app-skill-icon>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="45px" [pTooltip]="'Python'" tooltipPosition="top"/>
+                    <app-skill-icon [iconName]="'csharp'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'c'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'bash'" [isColored]="false"></app-skill-icon>
+                </p>
+                <h4>Frontend Development:</h4>
+                <p>
+                    <app-skill-icon [iconName]="'html5'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'css3'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'bootstrap'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'angularjs'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'react'" [isColored]="true"></app-skill-icon>
+                </p>
+                <h4>Backend Development:</h4>
+                <p>
+                    <app-skill-icon [iconName]="'nodejs'" [isColored]="true"></app-skill-icon>
+                    <i class="devicon-express-original" [pTooltip]="'Express.js'" tooltipPosition="top"
+                        style="font-size: 45px;"></i>
+                    <app-skill-icon [iconName]="'spring'" [isColored]="true"></app-skill-icon>
+                </p>
+                <h4>Database:</h4>
+                <p>
+                    <app-skill-icon [iconName]="'mysql'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'microsoftsqlserver'" [isColored]="true"></app-skill-icon>
+                    <app-skill-icon [iconName]="'mongodb'" [isColored]="true"></app-skill-icon>
+                </p>
+                <h4>Other:</h4>
+                <p>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" [pTooltip]="'Linux'" [tooltipPosition]="'top'" height="45px"/>
+                    <app-skill-icon [iconName]="'vscode'" [isColored]="true"></app-skill-icon>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+                        height="45px" [pTooltip]="'Google Cloud Platform'" [tooltipPosition]="'top'"/>
+                    <app-skill-icon [iconName]="'git'" [isColored]="true"></app-skill-icon>
+
+                </p>
+
+            </p-card>
+        </div>
+        <div class="aboutItem" id="aboutB">
+            <p-card [header]="'Where I am Today'" id="aboutA1">
+                <p>
+                    After completing a double major in Economics and Environmental Science at the University of Toronto
+                    in
+                    late 2019, unique circumstances coupled with the
+                    Covid-19 pandemic afforded me the oppotunity to pursue a Computer Programming Diploma at Sheridan
+                    College.
+                    This decision birthed a true
+                    passion for software development, one which I wish I had discovered much earlier. My strong aptitude
+                    and
+                    abilities in math and
+                    science have truly complemented my skill, interest and desire to grow in the IT field.<br>
+                    Now that I have graduated my goal is to continue to grow and develop in a professional setting. It
+                    is a
+                    priority
+                    that I find myself in environments where I can foster this growth by learning from others, making
+                    positive contributions
+                    and hopefully to one day inspire others on a similar path.
+                </p>
+                <br>
+                <p-button  styleClass="p-button-rounded p-button-secondary p-button-lg" (onClick)="openInNewTab('https://docs.google.com/document/d/e/2PACX-1vQlRxe3sLBwr55UeBTzEJm3GWYzszm4UJijUv6MGf5vDy3ORFckPCrQzG38Xn4zpCq5YC6PJ760jmGF/pub')">
+                    <svg width="35" viewBox="0 0 846.66 846.66"
+                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <defs>
+                                <style type="text/css">
+                                    .fil0 {
+                                        fill: black;
+                                        fill-rule: nonzero
+                                    }
+                                </style>
+                            </defs>
+                            <g id="Layer_x0020_1">
+                                <path class="fil0"
+                                    d="M539.75 794.68c27.15,0 27.15,41.29 0,41.29l-497.47 0c-11.4,0 -20.64,-9.25 -20.64,-20.65l0 -621.69c0,-5.7 2.31,-10.87 6.04,-14.6l162.3 -162.29c4.03,-4.03 9.31,-6.05 14.59,-6.05l466.89 0c11.4,0 20.65,9.25 20.65,20.65l0 361.36c0,27.16 -41.29,27.16 -41.29,0l0 -340.72 -437.7 0 -150.19 150.2 0 592.5 476.82 0zm-351.21 -181.98c-27.16,0 -27.16,-41.29 0,-41.29l306.67 0c27.16,0 27.16,41.29 0,41.29l-306.67 0zm0 -274.68c-27.16,0 -27.16,-41.29 0,-41.29l306.67 0c27.16,0 27.16,41.29 0,41.29l-306.67 0zm0 91.56c-27.16,0 -27.16,-41.29 0,-41.29l306.67 0c27.16,0 27.16,41.29 0,41.29l-306.67 0zm0 91.56c-27.16,0 -27.16,-41.29 0,-41.29l306.67 0c27.16,0 27.16,41.29 0,41.29l-306.67 0zm0 -274.68c-27.16,0 -27.16,-41.29 0,-41.29l306.67 0c27.16,0 27.16,41.29 0,41.29l-306.67 0zm496.57 238.25c49.84,0 90.24,40.4 90.24,90.24 0,18.1 -5.33,34.95 -14.5,49.07 37.57,24.93 61.47,66.08 64.13,111.2 1.59,27.06 -39.55,29.47 -41.13,2.42 -2.11,-35.69 -22.61,-67.48 -54.13,-84.24 -13.16,7.5 -28.38,11.78 -44.61,11.78 -17.56,0 -33.95,-5.01 -47.81,-13.69 -33.44,16.12 -55.6,49.04 -57.79,86.15 -1.59,27.05 -42.72,24.64 -41.13,-2.42 2.79,-47.18 28.75,-89.88 69.08,-114.28 -7.99,-13.47 -12.58,-29.19 -12.58,-45.99 0,-49.83 40.4,-90.24 90.23,-90.24zm0 41.29c-27.03,0 -48.94,21.92 -48.94,48.95 0,27.03 21.91,48.94 48.94,48.94 27.03,0 48.95,-21.91 48.95,-48.94 0,-27.03 -21.91,-48.95 -48.95,-48.95z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                    View Resume
+                </p-button>
+            </p-card>
+        </div>
+    </div>
+</div>
+<div class="sectionBackgroud">
+    <div class="section" id="portfolio" #portfolio>
+        <div id="portfolioA">
+            <p-carousel id="PortfolioACarousel" [numVisible]="1" [value]="projects" [page]=selectedPage>
+                <ng-template pTemplate="header">
+                    <h3 style="color: aliceblue;">Featured Projects:</h3>
+                </ng-template>
+                <ng-template let-project pTemplate="item">
+                    <p-card [header]="project.name" id="PortfolioA1Card">
+                        <img src="assets/images/{{project.image}}" width="45%">
+                        <p>{{project.description}}</p>
+                        <p-button (onClick)="showDetails(project)" styleClass="p-button-rounded p-button-secondary">View
+                            Details</p-button>
+                    </p-card>
+                </ng-template>
+            </p-carousel>
+        </div>
     </div>
 </div>
