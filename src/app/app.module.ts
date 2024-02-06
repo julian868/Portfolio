@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
@@ -23,6 +22,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FieldsetModule } from 'primeng/fieldset';
 import { SkillIconComponent } from './container/skill-icon/skill-icon.component';
+import { ResponsiveService } from 'src/utils/responsive/responsive.service';
 
 
 @NgModule({
@@ -53,7 +53,7 @@ import { SkillIconComponent } from './container/skill-icon/skill-icon.component'
     InputTextareaModule,
     FieldsetModule
   ],
-  providers: [],
+  providers: [ResponsiveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

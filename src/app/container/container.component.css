@@ -1,128 +1,150 @@
 @font-face {
-    font-family: spaceAge;
-    src: url('../../assets/fonts/spaceage.ttf');
+  font-family: spaceAge;
+  src: url("../../assets/fonts/spaceage.ttf");
 }
 
 .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .section {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    vertical-align: middle;
-    gap: 10%;
-    align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  vertical-align: middle;
+  gap: 10%;
+  align-items: center;
 }
 
+
 .sectionBackgroud {
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  vertical-align: middle;
+  padding: 5%;
+  gap: 10%;
+  align-items: center;
+}
+.sectionBackgroud-mobile,
+ .sectionBackgroud-mobile>#about{
+    flex-direction: column;
     height: 100%;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    vertical-align: middle;
-    padding: 5%;
-    gap: 10%;
-    align-items: center;
 }
 
 #homeA {
-    text-align: center;
-    justify-content: content;
-    width: 40%;
+  text-align: center;
+  justify-content: content;
+  width: 40%;
+}
+.homeA-mobile{
+    width: 100% !important;
+}
+.homeB-mobile{
+    width: 100% !important;
 }
 
 #homeB {
-    text-align: center;
-    width: 45%;
+  text-align: center;
+  width: 45%;
 }
 
 #homeA1,
 #homeA2 {
-    color: aliceblue;
-    font-size: xx-large;
+  color: aliceblue;
+  font-size: xx-large;
 }
 
 #homeA2 {
-    font-family: spaceAge;
-    font-size: 50px;
+  font-family: spaceAge;
+  font-size: 50px;
 }
 
 #homeB1B {
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-    gap: 5%;
-    padding: 5%;
-    padding-bottom: 0;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  gap: 5%;
+  padding: 5%;
+  padding-bottom: 0;
 }
-#about{
-    padding-top: 90px;
-    padding-bottom: 40px;
+#about {
+  padding-top: 90px;
+  padding-bottom: 40px;
 }
-#aboutA{
-    font-size: large;
+#aboutA {
+  font-size: large;
+}
+
+.aboutItem-mobile{
+    width: 100% !important;
+    padding-top: 10px;
 }
 
 #aboutB {
-    display: flex;
-    justify-content: center;
-    width: 50%;
+  display: flex;
+  justify-content: center;
+  width: 50%;
 }
 
 #aboutA1 {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
+}
+#portfolio{
+    width: 100vw;
 }
 
 #PortfolioACarousel {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    padding-top: 5%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 5%;
 }
 
-
 #portfolioA {
-    width: 90%;
-    padding-left: 20%;
-    padding-right: 20%;
-    display: flex;
-    align-items: center;
+  width: 90%;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.portfolioA-mobile{
+    width: 100% !important;
+    padding: 0 !important;
 }
 
 #portfolioA1Card {
-    height: 100%;
+  height: 100%;
 }
-
-#contactA {
-    padding: 10%;
+.PortfolioA1Card-mobile>>>img{
+    width: 80% !important;
+    padding-top: 5%;
 }
 
 :host ::ng-deep {
-    .p-carousel-indicators .p-carousel-indicator.p-highlight button {
-        background: #B0BEC5;
-    }
+  .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background: #b0bec5;
+  }
 
-    .p-carousel .p-carousel-content .p-carousel-prev,
-    .p-carousel .p-carousel-content .p-carousel-next {
-        color: aliceblue;
-    }
+  .p-carousel .p-carousel-content .p-carousel-prev,
+  .p-carousel .p-carousel-content .p-carousel-next {
+    color: aliceblue;
+  }
 
-    .p-card-content{
-        padding: 0;
-    }
-    .p-card-title{
-        margin: 0;
-    }
-
-    
+  .p-card-content {
+    padding: 0;
+  }
+  .p-card-title {
+    margin: 0;
+  }
 }
