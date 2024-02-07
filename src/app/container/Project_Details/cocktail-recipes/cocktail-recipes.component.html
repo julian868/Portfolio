@@ -4,9 +4,9 @@
 >
   <div
     class="searchAreaContainer"
-    [ngStyle]="{ 'padding-top': responsiveService.deviceMobile() ? '6%' : '' }"
+    [ngClass]="{'searchAreaContainer-mobile':responsiveService.deviceMobile()}"
   >
-    <div id="searchInput">
+    <div id="searchInputContainer">
       <div>
         <span class="p-input-icon-left">
           <span class="p-float-label">
@@ -33,7 +33,7 @@
         >
       </div>
     </div>
-    <div id="closeResultsButton" *ngIf="showSearchResults">
+    <div class="closeResultsButton" *ngIf="showSearchResults">
       <p-button
         icon="pi pi-times"
         styleClass="p-button-rounded p-button-secondary"

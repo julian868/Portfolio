@@ -15,21 +15,27 @@ p-carousel {
 .searchAreaContainer {
     display: flex;
     padding: 1%;
-    padding-top: 3%;
-    column-gap: 0.3%;
-    overflow: auto;
-    width: 100%;
+    padding-top: 2%;
+    column-gap: 3%;
+    width: inherit;
 }
 
-#closeResultsButton {
+.searchAreaContainer-mobile{
+    padding-top: 6% !important;
+    column-gap: 6% !important;
+}
+.searchAreaContainer-mobile>.closeResultsButton{
+    margin-left: unset !important;
+}
+
+.closeResultsButton {
     margin-left: auto;
 }
 
-#searchInput {
+#searchInputContainer {
     display: inline-flex;
     gap: 3%;
     width: auto;
-
 }
 
 .recipeContainer {
