@@ -44,6 +44,12 @@ td {
     text-align: center;
 }
 
+.table-mobile,
+.table-mobile>tr,
+.table-mobile>tr>td{
+    width: 100%;
+}
+
 #instructions {
     padding-bottom: 2%;
 }
@@ -61,7 +67,9 @@ td {
     align-items: center;
     column-gap: 10px;
     margin: 0px;
+    padding:0;
 }
+
 a:visited {
     color: #dedede
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { MenuItem } from 'primeng/api/menuitem';
+import { ResponsiveService } from 'src/utils/responsive/responsive.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -7,6 +8,7 @@ import { MenuItem } from 'primeng/api/menuitem';
   styleUrls: ['./menu-bar.component.css'],
 })
 export class MenuBarComponent {
+  constructor(public responsiveService: ResponsiveService) { }
   @Output()
   menuBarItemClicked: EventEmitter<string> = new EventEmitter<string>();
   onMenuBarItemClicked(item: string) {

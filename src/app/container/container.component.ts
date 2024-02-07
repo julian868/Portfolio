@@ -91,13 +91,16 @@ export class ContainerComponent implements AfterViewInit, OnInit {
 
   ref!: DynamicDialogRef;
   showDetails(project: any) {
+    let height: string = this.responsiveService.deviceMobile() ? '95%' : '80%';
+    let width: string = this.responsiveService.deviceMobile() ? '90%' : '65%';
+
     switch (project.id) {
       case 101:
         {
           this.ref = this.dialogService.open(CocktailRecipesComponent, {
             header: project.name,
-            width: '65%',
-            height: '80%',
+            width: width,
+            height: height,
             dismissableMask: true,
           });
         }
@@ -106,8 +109,8 @@ export class ContainerComponent implements AfterViewInit, OnInit {
         {
           this.ref = this.dialogService.open(EncryptorComponent, {
             header: project.name,
-            width: '65%',
-            height: '80%',
+            width: width,
+            height: height,
           });
         }
         break;
@@ -115,8 +118,8 @@ export class ContainerComponent implements AfterViewInit, OnInit {
         {
           this.ref = this.dialogService.open(QrGeneratorDetails, {
             header: project.name,
-            width: '65%',
-            height: '80%',
+            width: width,
+            height: height,
           });
         }
         break;

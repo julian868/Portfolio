@@ -1,6 +1,6 @@
 <p-menubar [model]="items">
     <ng-template pTemplate="end">
-        <div id="SocialButtons">
+        <div [ngClass]="{'socialButtons-mobile':responsiveService.deviceMobile()}" id="SocialButtons">
             <p-button icon="pi pi-linkedin" (onClick)="openInNewTab('https://www.linkedin.com/in/julian-ellis-731bb010b');" styleClass="p-button-rounded p-button-secondary p-button-lg"></p-button>
             <p-button icon="pi pi-github" (onClick)="openInNewTab('https://github.com/julian868')" styleClass="p-button-rounded p-button-secondary p-button-lg"></p-button>
         </div>
