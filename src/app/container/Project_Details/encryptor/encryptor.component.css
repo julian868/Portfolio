@@ -1,76 +1,82 @@
 a:visited {
-    color: #dedede
+  color: #dedede;
 }
 
 .sourceCode {
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    font-size: smaller;
-    gap: 5px
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  font-size: smaller;
+  gap: 5px;
 }
 
 p-image {
-    float: left;
-    padding-right: 15px
+  float: left;
+  padding-right: 15px;
 }
 
 ul {
-    list-style: none;
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
-    margin: 0px;
+  list-style: none;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  margin: 0px;
 }
 
 h4 {
-    text-align: center;
-    margin: 0px;
-    margin-top: 5px
+  text-align: center;
+  margin: 0px;
+  margin-top: 5px;
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
 
 #encryptor2 {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .textButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #decTextButton {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 #fieldsetContent {
-    display: flex;
+  display: flex;
 }
 
 #closeOutput {
-    margin-left: auto;
-    margin-right: -1.5%;
-    margin-top: -2.5%;
+  margin-left: auto;
+  margin-right: -1.5%;
+  margin-top: -2.5%;
 }
-#output{
-    padding-top: 3%;
+#output {
+  padding-top: 3%;
 }
-#encryptor2{
-    padding-top: 3%;
+#encryptor2 {
+  padding-top: 3%;
 }
-.textButton>p-button{
-    padding-top: 2%;
+.textButton > p-button {
+  padding-top: 2%;
 }
-#aboutProject{
-    padding-top: 1%;
+#aboutProject {
+  padding-top: 1%;
 }
-:host ::ng-deep .p-tabview-panels{
-    border: 0px;
+:host ::ng-deep .p-tabview-panels {
+  border: 0px;
+}
+
+:host ::ng-deep {
+  .p-image-preview {
+    overflow-x: scroll;
+  }
 }

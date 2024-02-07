@@ -7,6 +7,9 @@
 #SocialButtons{
     padding-right: 30px;
 }
+.socialButtons-mobile{
+    padding-right: 10px !important;
+}
 #SocialButtons>p-button{
     padding-left: 10px;
 }
