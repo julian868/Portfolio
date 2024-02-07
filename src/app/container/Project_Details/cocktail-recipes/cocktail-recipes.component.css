@@ -15,7 +15,10 @@ p-carousel {
 .searchAreaContainer {
     display: flex;
     padding: 1%;
+    padding-top: 3%;
     column-gap: 0.3%;
+    overflow: auto;
+    width: 100%;
 }
 
 #closeResultsButton {
@@ -25,6 +28,8 @@ p-carousel {
 #searchInput {
     display: inline-flex;
     gap: 3%;
+    width: auto;
+
 }
 
 .recipeContainer {
