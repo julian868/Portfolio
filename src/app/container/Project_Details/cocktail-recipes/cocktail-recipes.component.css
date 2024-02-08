@@ -1,86 +1,91 @@
 .mainContainer {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .carouselContainer {
-    width: 100%;
+  width: 100%;
 }
 
 p-carousel {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .searchAreaContainer {
-    display: flex;
-    padding: 1%;
-    padding-top: 2%;
-    column-gap: 3%;
-    width: inherit;
+  display: flex;
+  padding: 1%;
+  padding-top: 2%;
+  column-gap: 3%;
+  width: inherit;
+  min-width: 0;
 }
 
-.searchAreaContainer-mobile{
-    padding-top: 6% !important;
-    column-gap: 6% !important;
+.searchAreaContainer-mobile {
+  padding-top: 6% !important;
+  column-gap: 6% !important;
 }
-.searchAreaContainer-mobile>.closeResultsButton{
-    margin-left: unset !important;
+.searchAreaContainer-mobile > .closeResultsButton {
+  margin-left: unset !important;
 }
 
 .closeResultsButton {
-    margin-left: auto;
+  margin-left: auto;
+  min-width: 0;
 }
 
 #searchInputContainer {
-    display: inline-flex;
-    gap: 3%;
-    width: auto;
+  display: inline-flex;
+  gap: 3%;
+  width: auto;
+}
+#searchInputContainer > * {
+  min-width: 0;
 }
 
 .recipeContainer {
-    text-align: center;
+  text-align: center;
 }
 
 table {
-    width: 30%;
-    table-layout: fixed;
-    margin-left: auto;
-    margin-right: auto;
+  width: 30%;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table,
 tr,
 td {
-    text-align: center;
+  text-align: center;
 }
 
 .table-mobile,
-.table-mobile>tr,
-.table-mobile>tr>td{
-    width: 100%;
+.table-mobile > tr,
+.table-mobile > tr > td {
+  width: 100%;
 }
 
 #instructions {
-    padding-bottom: 2%;
+  padding-bottom: 2%;
 }
 
-.aboutProject>h5,
-.aboutProject>p {
-    text-align: left;
+.aboutProject > h5,
+.aboutProject > p {
+  text-align: left;
 }
 
-.aboutProject>ul {
-    list-style: none;
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
-    margin: 0px;
-    padding:0;
+.aboutProject > ul {
+  list-style: none;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  margin: 0px;
+  padding: 0;
 }
 
 a:visited {
-    color: #dedede
+  color: #dedede;
 }
