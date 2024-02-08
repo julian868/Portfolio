@@ -38,6 +38,7 @@ p-carousel {
   display: inline-flex;
   gap: 3%;
   width: auto;
+  min-width: 0;
 }
 #searchInputContainer > * {
   min-width: 0;
