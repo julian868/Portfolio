@@ -4,7 +4,9 @@
 >
   <div
     class="searchAreaContainer"
-    [ngClass]="{'searchAreaContainer-mobile':responsiveService.deviceMobile()}"
+    [ngClass]="{
+      'searchAreaContainer-mobile': responsiveService.deviceMobile()
+    }"
   >
     <div id="searchInputContainer">
       <div>
@@ -133,10 +135,10 @@
             width="auto"
             height="auto"
             [ngStyle]="{
-              'max-width': responsiveService.deviceMobile() ? '60vw' : '60%'
+              'max-width': responsiveService.deviceMobile() ? '50vw' : '60%'
             }"
             [ngStyle]="{
-              'max-height': responsiveService.deviceMobile() ? '60vw' : '15vw'
+              'max-height': responsiveService.deviceMobile() ? '50vw' : '15vw'
             }"
           />
           <br />
@@ -151,7 +153,10 @@
   <div class="recipeContainer" *ngIf="showRecipe">
     <div id="ingredients">
       <h4>Ingredients</h4>
-      <table *ngFor="let ingredient of ingredients" [ngClass]="{'table-mobile':responsiveService.deviceMobile()}">
+      <table
+        *ngFor="let ingredient of ingredients"
+        [ngClass]="{ 'table-mobile': responsiveService.deviceMobile() }"
+      >
         <tr>
           <td>{{ measurements.get(ingredient) }}</td>
           <td>{{ ingredient }}</td>
